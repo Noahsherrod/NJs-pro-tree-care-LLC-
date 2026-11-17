@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#183b2c">
+  <meta name="description" content="NJ's Pro Tree Care LLC provides 24/7 storm cleanup, tree trimming, and deadwood removal. Get in touch to discuss your tree care needs.">
+  <title>NJ's Pro Tree Care LLC | Tree Care & Storm Cleanup</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --forest: #183b2c;
+      --forest-deep: #10291f;
+      --leaf: #d7e5d6;
+      --cream: #f7f5ee;
+      --paper: #fffefa;
+      --ink: #1d2922;
+      --muted: #647168;
+      --orange: #e89a4c;
+      --line: #e2e7df;
+      --radius: 18px;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; color: var(--ink); background: var(--paper); line-height: 1.6; }
+    a { color: inherit; }
+    button, input, select, textarea { font: inherit; }
+    .skip-link { position: absolute; left: 1rem; top: -5rem; z-index: 20; padding: .7rem 1rem; background: white; color: var(--forest); }
+    .skip-link:focus { top: 1rem; }
+    .wrap { width: min(1120px, calc(100% - 2.5rem)); margin-inline: auto; }
+    .topbar { background: var(--forest-deep); color: #f9f8f2; font-size: .88rem; }
+    .topbar-inner { min-height: 40px; display: flex; align-items: center; justify-content: center; gap: .55rem; text-align: center; }
+    .status-dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; background: var(--orange); box-shadow: 0 0 0 4px #e89a4c26; }
+    header { background: var(--paper); border-bottom: 1px solid #e8ebe5; }
+    .nav { min-height: 78px; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+    .brand { display: flex; align-items: center; gap: .75rem; text-decoration: none; font-weight: 800; letter-spacing: -.035em; color: var(--forest); line-height: 1.12; }
+    .brand-mark { width: 42px; height: 42px; flex: 0 0 42px; display: grid; place-items: center; color: white; background: var(--forest); border-radius: 13px; }
+    .brand small { display: block; margin-top: .22rem; color: var(--muted); font-size: .68rem; font-weight: 650; letter-spacing: .11em; text-transform: uppercase; }
+    .nav-links { display: flex; align-items: center; gap: 1.65rem; }
+    .nav-links a { text-decoration: none; color: #48564c; font-weight: 650; font-size: .94rem; }
+    .nav-links a:hover { color: var(--forest); }
+    .button { display: inline-flex; min-height: 48px; align-items: center; justify-content: center; gap: .5rem; padding: .75rem 1.15rem; border: 0; border-radius: 10px; text-decoration: none; font-weight: 750; cursor: pointer; transition: transform .18s ease, background .18s ease; }
+    .button:hover { transform: translateY(-2px); }
+    .button-primary { background: var(--orange); color: #241a10; }
+    .button-primary:hover { background: #f1aa62; }
+    .button-dark { background: var(--forest); color: white; }
+    .button-dark:hover { background: #24543d; }
+    .hero { overflow: hidden; position: relative; background: var(--forest); color: white; }
+    .hero::after { position: absolute; content: ""; width: 520px; height: 520px; right: -120px; top: -200px; border: 1px solid #ffffff12; border-radius: 50%; box-shadow: 0 0 0 55px #ffffff08, 0 0 0 110px #ffffff05; pointer-events: none; }
+    .hero-grid { position: relative; z-index: 1; min-height: 515px; display: grid; grid-template-columns: 1.05fr .95fr; align-items: center; gap: 3rem; padding-block: 4.5rem; }
+    .eyebrow { display: inline-flex; align-items: center; gap: .55rem; color: #f3bb7e; font-weight: 750; font-size: .8rem; letter-spacing: .12em; text-transform: uppercase; }
+    h1 { max-width: 650px; margin: .9rem 0 1.1rem; font-size: clamp(2.7rem, 5.2vw, 4.6rem); line-height: 1.02; letter-spacing: -.055em; }
+    .hero-copy > p { max-width: 550px; margin: 0; color: #dbe5dc; font-size: 1.1rem; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 1.7rem; }
+    .button-outline { border: 1px solid #ffffff75; color: white; background: transparent; }
+    .button-outline:hover { background: #ffffff12; }
+    .hero-note { display: flex; align-items: center; gap: .55rem; margin-top: 1.45rem; color: #c5d3c8; font-size: .88rem; }
+    .hero-art { min-height: 330px; position: relative; display: grid; place-items: center; }
+    .art-disc { width: min(100%, 410px); aspect-ratio: 1; position: relative; display: grid; place-items: center; overflow: hidden; border-radius: 50%; background: radial-gradient(circle at 50% 35%, #527558 0, #315c41 47%, #204431 75%); border: 1px solid #ffffff24; box-shadow: 0 24px 80px #06190f55; }
+    .art-disc::before, .art-disc::after { position: absolute; content: ""; bottom: -8%; width: 0; height: 0; border-left: 115px solid transparent; border-right: 115px solid transparent; border-bottom: 300px solid #173b2a; }
+    .art-disc::before { left: 2%; transform: scale(.82); opacity: .8; }
+    .art-disc::after { right: 0; border-left-width: 150px; border-right-width: 150px; border-bottom-width: 355px; border-bottom-color: #102f22; opacity: .72; }
+    .tree-svg { position: relative; z-index: 2; width: 70%; height: auto; filter: drop-shadow(0 10px 12px #11271c55); }
+    .art-label { position: absolute; z-index: 3; left: 2%; bottom: 12%; padding: .8rem 1rem; border: 1px solid #ffffff36; border-radius: 12px; background: #10291fcf; color: white; backdrop-filter: blur(7px); font-weight: 750; }
+    .art-label span { display: block; color: #f3bb7e; font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; }
+    .trust-row { background: var(--cream); border-bottom: 1px solid #e9e9df; }
+    .trust-inner { min-height: 83px; display: flex; align-items: center; justify-content: space-between; gap: 1.2rem; }
+    .trust-item { display: flex; align-items: center; gap: .7rem; color: #34443a; font-weight: 700; }
+    .trust-icon { width: 35px; height: 35px; display: grid; place-items: center; background: white; border: 1px solid var(--line); border-radius: 10px; color: var(--forest); }
+    section { scroll-margin-top: 20px; }
+    .section { padding-block: 5.5rem; }
+    .section-heading { max-width: 650px; margin-bottom: 2.2rem; }
+    .section-kicker { color: #71806f; font-size: .79rem; letter-spacing: .13em; text-transform: uppercase; font-weight: 800; }
+    h2 { margin: .45rem 0 .7rem; color: var(--forest); font-size: clamp(2rem, 3.5vw, 3.1rem); line-height: 1.08; letter-spacing: -.045em; }
+    .section-heading p { margin: 0; color: var(--muted); font-size: 1.05rem; }
+    .service-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    .service-card { min-height: 235px; padding: 1.5rem; border: 1px solid var(--line); border-radius: var(--radius); background: white; }
+    .service-icon { width: 48px; height: 48px; display: grid; place-items: center; margin-bottom: 1.2rem; border-radius: 14px; background: var(--leaf); color: var(--forest); }
+    .service-card h3 { margin: 0 0 .45rem; color: var(--forest); font-size: 1.2rem; letter-spacing: -.02em; }
+    .service-card p { margin: 0; color: var(--muted); }
+    .about { background: var(--cream); }
+    .about-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 4rem; align-items: center; }
+    .about-panel { min-height: 340px; padding: 2rem; display: flex; flex-direction: column; justify-content: space-between; border-radius: 22px; background: var(--forest); color: white; overflow: hidden; position: relative; }
+    .about-panel::after { content: ""; position: absolute; width: 270px; height: 270px; right: -75px; bottom: -105px; border: 1px solid #ffffff2a; border-radius: 50%; box-shadow: 0 0 0 35px #ffffff0d, 0 0 0 70px #ffffff08; }
+    .about-panel .big { position: relative; z-index: 1; max-width: 320px; font-size: 2.2rem; font-weight: 800; line-height: 1.1; letter-spacing: -.045em; }
+    .about-panel .small { position: relative; z-index: 1; color: #d0dfd2; }
+    .about-copy p { color: var(--muted); }
+    .check-list { display: grid; gap: .75rem; list-style: none; padding: 0; margin: 1.3rem 0 0; }
+    .check-list li { display: flex; gap: .7rem; align-items: flex-start; color: #34443a; font-weight: 650; }
+    .check { flex: 0 0 22px; width: 22px; height: 22px; display: grid; place-items: center; border-radius: 50%; background: #dce9dc; color: var(--forest); font-size: .78rem; font-weight: 900; }
+    .contact-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 3.2rem; align-items: start; }
+    .contact-intro p { color: var(--muted); }
+    .contact-info { margin-top: 1.6rem; padding: 1rem 1.1rem; border: 1px solid var(--line); border-radius: 12px; background: var(--cream); color: #4a584f; font-size: .9rem; }
+    .quote-form { padding: 1.6rem; border: 1px solid var(--line); border-radius: var(--radius); background: white; box-shadow: 0 12px 40px #173b2a0a; }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .field { display: grid; gap: .42rem; }
+    .field-full { grid-column: 1 / -1; }
+    label { color: #35433a; font-size: .9rem; font-weight: 700; }
+    input, select, textarea { width: 100%; padding: .8rem .85rem; border: 1px solid #d5ddd5; border-radius: 9px; background: #fff; color: var(--ink); }
+    input:focus, select:focus, textarea:focus { outline: 3px solid #d7e5d6; border-color: #527558; }
+    textarea { min-height: 115px; resize: vertical; }
+    .form-hint { margin: .75rem 0 1rem; color: var(--muted); font-size: .82rem; }
+    .form-message { margin: .85rem 0 0; color: #8a421d; font-size: .9rem; }
+    footer { padding-block: 1.7rem; background: var(--forest-deep); color: #dbe5dc; }
+    .footer-inner { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; font-size: .88rem; }
+    .footer-inner a { color: #f3bb7e; }
+    @media (max-width: 780px) {
+      .nav { min-height: 68px; }
+      .nav-links { gap: .8rem; }
+      .nav-links a:not(.button) { display: none; }
+      .hero-grid { grid-template-columns: 1fr; gap: 1rem; padding-block: 4rem 2.5rem; }
+      .hero-art { min-height: 250px; }
+      .art-disc { width: min(72vw, 330px); }
+      .art-disc::before { border-left-width: 90px; border-right-width: 90px; border-bottom-width: 240px; }
+      .art-disc::after { border-left-width: 115px; border-right-width: 115px; border-bottom-width: 280px; }
+      .trust-inner { justify-content: center; flex-wrap: wrap; padding-block: 1rem; }
+      .trust-item { font-size: .87rem; }
+      .service-grid { grid-template-columns: 1fr 1fr; }
+      .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .about-panel { min-height: 260px; }
+      .section { padding-block: 4rem; }
+    }
+    @media (max-width: 520px) {
+      .wrap { width: min(100% - 1.5rem, 1120px); }
+      .brand { font-size: .92rem; }
+      .brand-mark { width: 38px; height: 38px; flex-basis: 38px; }
+      .nav .button { min-height: 42px; padding: .6rem .75rem; font-size: .85rem; }
+      h1 { font-size: 2.7rem; }
+      .hero-copy > p { font-size: 1rem; }
+      .service-grid { grid-template-columns: 1fr; }
+      .service-card { min-height: auto; }
+      .form-grid { grid-template-columns: 1fr; }
+      .field-full { grid-column: auto; }
+      .quote-form { padding: 1.15rem; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition-duration: .01ms !important; } }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="topbar"><div class="wrap topbar-inner"><span class="status-dot" aria-hidden="true"></span> Available 24/7 for storm cleanup</div></div>
+  <header>
+    <nav class="wrap nav" aria-label="Main navigation">
+      <a class="brand" href="#top" aria-label="NJ's Pro Tree Care LLC home">
+        <span class="brand-mark" aria-hidden="true"><svg width="25" height="25" viewBox="0 0 24 24" fill="none"><path d="M12 2 4.5 12h4L5 17h5v5h4v-5h5l-3.5-5h4L12 2Z" fill="currentColor"/></svg></span>
+        <span>NJ's Pro Tree Care<small>LLC · Tree care & cleanup</small></span>
+      </a>
+      <div class="nav-links"><a href="#services">Services</a><a href="#about">About</a><a class="button button-dark" href="#contact">Request an estimate <span aria-hidden="true">↗</span></a></div>
+    </nav>
+  </header>
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow"><span class="status-dot" aria-hidden="true"></span> NJ's Pro Tree Care LLC</span>
+          <h1>When trees need care, we're ready.</h1>
+          <p>From storm cleanup to trimming and deadwood removal, get help with the tree work your property needs.</p>
+          <div class="hero-actions"><a class="button button-primary" href="#contact">Request an estimate <span aria-hidden="true">→</span></a><a class="button button-outline" href="#services">Explore services</a></div>
+          <div class="hero-note"><span aria-hidden="true">✦</span> 24/7 storm cleanup availability</div>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="art-disc">
+            <svg class="tree-svg" viewBox="0 0 300 330" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M152 21c-15 33-38 55-68 69 22 7 39 5 54-3-22 31-50 47-82 50 25 14 49 17 74 9-28 33-54 50-83 55 31 16 59 19 88 8v89h38v-93c31 14 61 11 91-6-35-4-62-22-87-52 27 9 53 5 78-8-35-1-63-18-85-50 18 7 37 6 57-4-31-13-54-35-69-64-4-8-8-8-12 0Z" fill="#d5b478"/><path d="M150 154h38v144h-38z" fill="#a87845"/><path d="m169 181 34 31" stroke="#c7975c" stroke-width="9" stroke-linecap="round"/><path d="M109 121c13-7 24-19 34-34m18 73c-11 13-27 21-48 24m87-59c-12-5-23-15-34-29" stroke="#f2d89e" stroke-width="7" stroke-linecap="round"/></svg>
+          </div>
+          <div class="art-label"><span>Tree care, on your terms</span>Storms · Trimming · Deadwood</div>
+        </div>
+      </div>
+    </section>
+    <div class="trust-row"><div class="wrap trust-inner">
+      <div class="trust-item"><span class="trust-icon" aria-hidden="true">◷</span> 24/7 storm response</div>
+      <div class="trust-item"><span class="trust-icon" aria-hidden="true">⌁</span> Tree trimming</div>
+      <div class="trust-item"><span class="trust-icon" aria-hidden="true">✳</span> Deadwood removal</div>
+    </div></div>
+    <section class="section" id="services">
+      <div class="wrap">
+        <div class="section-heading"><span class="section-kicker">What we do</span><h2>Tree work that fits your needs.</h2><p>Tell us what is going on and we'll talk through the right next step for your property.</p></div>
+        <div class="service-grid">
+          <article class="service-card"><div class="service-icon" aria-hidden="true"><svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v18M6 6l12 12M18 6 6 18M4 12h16"/><path d="M12 3 9 6m3-3 3 3M4 12l3-3m-3 3 3 3m13-3-3-3m3 3-3 3M12 21l-3-3m3 3 3-3"/></svg></div><h3>Storm cleanup</h3><p>24/7 availability for storm-related tree cleanup. Reach out when a storm leaves you with a tree-care concern.</p></article>
+          <article class="service-card"><div class="service-icon" aria-hidden="true"><svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21V9m0 4-5-4m5 7 5-5"/><path d="M12 10C7 10 5 7 5 3c4 0 7 2 7 7Zm0 4c0-5 3-8 7-8 0 4-2 7-7 8Z"/></svg></div><h3>Tree trimming</h3><p>Get in touch to discuss trimming and the work you have in mind for your trees.</p></article>
+          <article class="service-card"><div class="service-icon" aria-hidden="true"><svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21V11m0 4-4-4m4 7 4-4"/><path d="M12 12c-4 0-6-3-6-6 4 0 6 2 6 6Zm0 2c0-4 2-6 6-6 0 3-2 6-6 6Z"/><path d="m5 5 2 2m10 8 2 2"/></svg></div><h3>Deadwood removal</h3><p>Ask about removing deadwood and keeping up with the tree-care needs around your property.</p></article>
+        </div>
+      </div>
+    </section>
+    <section class="section about" id="about">
+      <div class="wrap about-grid">
+        <div class="about-panel"><span class="eyebrow">A local tree-care business</span><div class="big">Tell us what your trees need.</div><div class="small">NJ's Pro Tree Care LLC</div></div>
+        <div class="about-copy"><span class="section-kicker">About the business</span><h2>Care that starts with a conversation.</h2><p>Every property and tree-care situation is different. NJ's Pro Tree Care LLC is here to hear what you need—whether it's storm cleanup, trimming, deadwood removal, or another tree-care question.</p><p>Share a few details below and we'll be ready to discuss your project.</p><ul class="check-list"><li><span class="check" aria-hidden="true">✓</span><span>Storm cleanup availability, day or night</span></li><li><span class="check" aria-hidden="true">✓</span><span>Tree trimming and deadwood removal</span></li><li><span class="check" aria-hidden="true">✓</span><span>Talk through the work before getting started</span></li></ul></div>
+      </div>
+    </section>
+    <section class="section" id="contact">
+      <div class="wrap contact-grid">
+        <div class="contact-intro"><span class="section-kicker">Let's talk</span><h2>Request an estimate.</h2><p>Send a few details about your tree-care needs. The form will prepare an email for you to review and send.</p><div class="contact-info"><strong>Need storm cleanup?</strong><br>Storm cleanup availability is 24/7. Submit the form with “Storm cleanup” selected and include the best way to reach you.</div></div>
+        <form class="quote-form" id="quote-form">
+          <div class="form-grid">
+            <div class="field"><label for="name">Your name</label><input id="name" name="name" autocomplete="name" required></div>
+            <div class="field"><label for="phone">Phone number</label><input id="phone" name="phone" type="tel" autocomplete="tel" required></div>
+            <div class="field field-full"><label for="email">Your email</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+            <div class="field field-full"><label for="service">What can we help with?</label><select id="service" name="service" required><option value="">Choose a service</option><option>Storm cleanup</option><option>Tree trimming</option><option>Deadwood removal</option><option>Other tree-care needs</option></select></div>
+            <div class="field field-full"><label for="details">Project details</label><textarea id="details" name="details" placeholder="Tell us what you need help with." required></textarea></div>
+          </div>
+          <p class="form-hint">Your email app will open with your request. Review it and press send to contact the business.</p>
+          <button class="button button-dark" type="submit">Prepare my request <span aria-hidden="true">→</span></button>
+          <p class="form-message" id="form-message" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+  <footer><div class="wrap footer-inner"><span>© <span id="year"></span> NJ's Pro Tree Care LLC</span><a href="#top">Back to top ↑</a></div></footer>
+  <script>
+    // Set this to the business's email address before publishing so quote requests have a destination.
+    const BUSINESS_EMAIL = "";
+    document.getElementById("year").textContent = new Date().getFullYear();
+    document.getElementById("quote-form").addEventListener("submit", function (event) {
+      event.preventDefault();
+      const message = document.getElementById("form-message");
+      if (!BUSINESS_EMAIL) {
+        message.textContent = "The quote form needs the business email address added before it can send. Please check back soon.";
+        return;
+      }
+      const values = new FormData(event.currentTarget);
+      const subject = encodeURIComponent("Tree care estimate request — " + values.get("service"));
+      const body = encodeURIComponent(
+        "Name: " + values.get("name") + "\nPhone: " + values.get("phone") + "\nEmail: " + values.get("email") + "\nService: " + values.get("service") + "\n\nProject details:\n" + values.get("details")
+      );
+      window.location.href = "mailto:" + BUSINESS_EMAIL + "?subject=" + subject + "&body=" + body;
+      message.textContent = "Your email app should open with the request. Review the details and send the email to finish.";
+    });
+  </script>
+</body>
+</html>
